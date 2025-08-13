@@ -1,0 +1,25 @@
+{
+  "routes": [
+    {
+      "route": "/api/*",
+      "rewrite": "https://vibe-coding-backend-genix-cmhcgzgwfgcbf3dx.eastus-01.azurewebsites.net/*"
+    },
+    {
+      "route": "/*",
+      "serve": "/index.html",
+      "statusCode": 200
+    }
+  ],
+  "responseOverrides": {
+    "404": {
+      "redirect": "/index.html",
+      "statusCode": 200
+    }
+  },
+  "globalHeaders": {
+    "cache-control": "must-revalidate, max-age=6000"
+  },
+  "mimeTypes": {
+    ".json": "text/json"
+  }
+}
